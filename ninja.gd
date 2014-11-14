@@ -33,8 +33,7 @@ func _fixed_process(delta):
 	
 	if(is_colliding()):
 		var normal = get_collision_normal()
-		var angle = normal.dot(Vector2(0,-1))
-		if(angle >= 0):
+		if(normal.dot(Vector2(0,-1)) >= 0):
 			canMove = true
 			motion = normal.slide(motion)
 			velocity = normal.slide(velocity)

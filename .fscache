@@ -1,10 +1,10 @@
-::res://::1415928045
+::res://::1415936205
 dungeon.res::TileSet::1415762737::
 icon.png::ImageTexture::1415748418::
-main.scn::PackedScene::1415927857::
-ninja.gd::GDScript::1415928045::
-ninja.scn::PackedScene::1415926707::
-tileSet.scn::PackedScene::1415762729::
+main.scn::PackedScene::1415930222::
+ninja.gd::GDScript::1415933485::
+ninja.scn::PackedScene::1415933292::
+tileSet.scn::PackedScene::1415936205::
 ::res://img::1415748622
 ninja.png::ImageTexture::1415748622::
 ::res://img/dungeon::1415760024
@@ -92,3 +92,5 @@ Window_Light(1).png::ImageTexture::1415759762::
 Window_Light(2).png::ImageTexture::1415759762::
 Window_Light(3).png::ImageTexture::1415759762::
 Window_Light(4).png::ImageTexture::1415759762::
+::res://sound::1415928317
+mainthemeJASY.ogg::AudioStreamOGGVorbis::1415928311::
