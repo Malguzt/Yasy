@@ -3,7 +3,6 @@ extends KinematicBody2D
 const GRAVITY = 600.0
 const WALK_SPEED = 200
 const JUMP_SPEED = 300.0
-const JUMP_MAX_SPEED = 500.0
 const DECELERATION = 5
 
 var velocity = Vector2()
@@ -20,8 +19,8 @@ func _fixed_process(delta):
 		else:
 			velocity.x = 0
 	
-	if(Input.is_action_pressed("ui_up") and canMove and velocity.y > -JUMP_MAX_SPEED):
-		velocity.y -= JUMP_SPEED
+	if(Input.is_action_pressed("ui_up") and canMove):
+		velocity.y = -JUMP_SPEED
 	
 	if(velocity.x < -0.1):
 		play_animation("run_left")
@@ -31,19 +30,20 @@ func _fixed_process(delta):
 		play_animation("wait")
 	
 	var motion = velocity * delta
-	move(motion)
 	
 	if(is_colliding()):
 		var normal = get_collision_normal()
-		if(normal.dot(Vector2(0,-1)) > 0.7 or normal.dot(Vector2(1, 0)) > 0.7 or normal.dot(Vector2(-1, 0)) > 0.7):
+		var angle = normal.dot(Vector2(0,-1))
+		if(angle >= 0):
 			canMove = true
 			motion = normal.slide(motion)
 			velocity = normal.slide(velocity)
-			move(motion)
 		else:
 			velocity.y = delta * GRAVITY
 	else:
 		canMove = false
+	
+	move(motion)
 
 func _ready():
 	set_fixed_process(true)
