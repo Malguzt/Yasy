@@ -12,6 +12,10 @@ var light = MAX_LIGHT
 
 func _fixed_process(delta):
 	light -= 0.1
+	if(light <= 0):
+		set_pos(get_parent().get_node("Start").get_pos())
+		light = MAX_LIGHT
+	
 	get_node("NinjaSprite").set_opacity(light/MAX_LIGHT)
 	
 	velocity.y += delta * GRAVITY
@@ -57,5 +61,5 @@ func play_animation(animation):
 	if(player and animation != player.get_current_animation()):
 		player.play(animation)
 
-func _on_Area2D_body_enter( body ):
+func _on_light_body_enter ( body ):
 	light = MAX_LIGHT
