@@ -1,11 +1,12 @@
-::res://::1416512524
+::res://::1416523647
 dungeon.res::TileSet::1416155603::
 icon.png::ImageTexture::1415748418::
-main.scn::PackedScene::1416498341::
-ninja.gd::GDScript::1416512524::
+main.scn::PackedScene::1416514820::
+ninja.gd::GDScript::1416523647::
 ninja.scn::PackedScene::1416156243::
 tileSet.scn::PackedScene::1416155661::
-windows.gd::GDScript::1416512524::
+windows.gd::GDScript::1416523647::
+windows.scn::PackedScene::1416514222::
 ::res://img::1416498341
 flare_01_0.png::ImageTexture::1416498341::
 lightning_1.png::ImageTexture::1366851716::
