@@ -53,7 +53,7 @@ func _check_collitions(delta):
 
 
 func _move_things():
-	if(get_collider().get_type() == "RigidBody2D"):
+	if(get_collider() and get_collider().get_type() == "RigidBody2D"):
 		var impulse = - get_collision_normal() * (velocity / 10) * (light / MAX_LIGHT)
 		get_collider().apply_impulse(get_collision_pos(), impulse)
 
